@@ -10,6 +10,10 @@ from langchain.agents.middleware import HumanInTheLoopMiddleware
 from prompt.coding_v1_prompt import plan_act_prompt
 from tools.grep.custom_grep_tool import custom_grep
 from tools.sequential_thinking import sequential_thinking
+from memory.memory_compression import (
+    compress_memory, search_compressed_memories, get_memory_compression_stats,
+    generate_memory_summary, reset_memory_compression, batch_compress_memories
+)
 
 
 # from langgraph.checkpoint.memory import InMemorySaver
@@ -184,7 +188,9 @@ def exeCodingAgent():
 
     agent = create_agent(
         model=model,
-        tools=[get_weather, get_city, read_file, write_file, finish_agent, sequential_thinking, custom_grep],
+        tools=[get_weather, get_city, read_file, write_file, finish_agent, sequential_thinking, custom_grep,
+               compress_memory, search_compressed_memories, get_memory_compression_stats,
+               generate_memory_summary, reset_memory_compression, batch_compress_memories],
         middleware=[HumanInTheLoopMiddleware(
             interrupt_on={
                 # "write_file": True,  # All decisions (approve, edit, reject) allowed

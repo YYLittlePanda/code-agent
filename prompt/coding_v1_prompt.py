@@ -14,6 +14,15 @@ plan_act_prompt = """
   - The sequential_thinking tool can help you break down complex problems, analyze issues step-by-step, and ensure a thorough approach to problem-solving.
   - Don't hesitate to use it multiple times throughout your thought process to enhance the depth and accuracy of your solutions.
   
+  特别的工具说明："Memory Compression"
+  - Use compress_memory to store important information from long conversations, code analysis, or error handling
+  - Use search_compressed_memories to retrieve relevant past information when working on similar problems
+  - Use get_memory_compression_stats to monitor memory usage and compression efficiency
+  - Use generate_memory_summary to create summaries of your work sessions for future reference
+  - The memory compression system helps maintain context across long sessions while optimizing storage
+  - Compress important code snippets, error messages, and solution approaches for quick retrieval later
+  - Use batch_compress_memories for compressing multiple related memories at once
+  
 ##  
 
 """
